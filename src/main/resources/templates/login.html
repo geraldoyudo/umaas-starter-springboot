@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+<head>
+
+<title>UMAAS App | Login</title>
+
+
+</head>
+<body>  
+   <div>
+       <h1 >UMAAS APP</h1>
+       <h3 >Login</h3>
+       <!--/*/  
+         <small class="status">
+             <p class="error" th:if="${param.error != null}">Invalid username and password</p>
+             <p class="info" th:if="${param.logoout != null}">You have been logged out</p>
+             <p class="info" th:if="${param.message != null}" th:text="${param.message}"></p>
+        </small>
+    /*/-->
+    </div>
+    <div>
+      <form th:action="@{/login}" action="#" method="post" id="loginForm" class="well-lg bg-info form-group-lg">
+
+        <input type="text" id="usernameInput"  class="form-control"
+               placeholder="Username:" name="username"/>
+        <br/>
+        <input type="password" id="passwordInput" class="form-control"
+               placeholder="password" name="password"/>
+        <br/>
+        <div>
+            <label for="remember-me" >Remember Me</label>
+            <input type="checkbox" class="checkbox-inline" id="remember-me" name="remember-me" />
+        </div>
+
+        <button  id="loginButton" type="submit" class="btn bg-primary btn-block" >Login</button>
+        <small>
+
+            <a class="pull-left" id="register" th:href="@{/register}" href="register.html" 
+               >Register</a>
+            <a class="pull-right" id="passwordReset" th:href="@{/passwordReset}"
+           href="password-reset.html">Password Reset</a>
+
+        </small>
+
+    </form>
+    </div>
+        
+</body>
+</html>
